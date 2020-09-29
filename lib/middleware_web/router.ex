@@ -35,8 +35,8 @@ defmodule MiddlewareWeb.Router do
     pow_extension_routes()
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", MiddlewareWeb do
-  #   pipe_through :api
-  # end
+  scope "/", MiddlewareWeb do
+    pipe_through [:browser, :protected]
+    resources "/source_devices", SourceDeviceController
+  end
 end

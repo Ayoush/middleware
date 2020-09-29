@@ -1,0 +1,30 @@
+<h1>Listing Source devices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Device name</th>
+      <th>Device type</th>
+      <th>Device uuid</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for source_device <- @source_devices do %>
+    <tr>
+      <td><%= source_device.device_name %></td>
+      <td><%= source_device.device_type %></td>
+      <td><%= source_device.device_uuid %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.source_device_path(@conn, :show, source_device) %></span>
+        <span><%= link "Edit", to: Routes.source_device_path(@conn, :edit, source_device) %></span>
+        <span><%= link "Delete", to: Routes.source_device_path(@conn, :delete, source_device), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Source device", to: Routes.source_device_path(@conn, :new) %></span>

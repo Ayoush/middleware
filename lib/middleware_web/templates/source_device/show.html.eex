@@ -1,0 +1,23 @@
+<h1>Show Source device</h1>
+
+<ul>
+
+  <li>
+    <strong>Device name:</strong>
+    <%= @source_device.device_name %>
+  </li>
+
+  <li>
+    <strong>Device type:</strong>
+    <%= @source_device.device_type %>
+  </li>
+
+  <li>
+    <strong>Device uuid:</strong>
+    <%= @source_device.device_uuid %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.source_device_path(@conn, :edit, @source_device) %></span>
+<span><%= link "Back", to: Routes.source_device_path(@conn, :index) %></span>
